@@ -33,8 +33,10 @@
 :root {
   --color-primary-light: #faf4ea;
   --color-primary-dark: #31261a;
-  --color-brand-light: #819b57;
+  --color-secondary-dark: #a18268;
+  --color-brand-normal: #819b57;
   --color-brand-dark: #465929;
+  --color-brand-light: #cfcfbc;
 }
 
 /* Base */
@@ -44,21 +46,12 @@
 
 body {
   color: var(--color-primary-dark);
-  font-family: Poppins, sans-serif;
+  background-color: var(--color-primary-light);
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-address {
-  font-style: normal;
 }
 
 h1,
@@ -71,8 +64,14 @@ p {
   margin-top: 0;
 }
 
-.section {
-  padding: 48px 0;
+address {
+  font-style: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .visually-hidden {
@@ -82,6 +81,10 @@ p {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.section {
+  padding: 48px 0;
 }
 
 .container {
@@ -97,8 +100,8 @@ p {
   color: var(--color-primary-light);
   font-weight: 600;
   border-radius: 8px;
-  border: 2px solid var(--color-brand-light);
-  background-color: var(--color-brand-light);
+  border: 2px solid var(--color-brand-normal);
+  background-color: var(--color-brand-normal);
   cursor: pointer;
 }
 
@@ -114,7 +117,7 @@ p {
 }
 
 .link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 
 /* Header style */
@@ -141,22 +144,27 @@ p {
 /* Hero section */
 .hero-section {
   padding: 272px 0;
+  background-image: url("../imgs/hero-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 
 .hero-title {
+  margin-bottom: 0;
   color: var(--color-primary-light);
   text-align: center;
   font-size: 128px;
-  margin-bottom: 0;
+  font-weight: 900;
 }
 
 .hero-title .accent {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 
 /* Advantages section */
 .advantages-section {
-  background-color: var(--color-brand-light);
+  background-color: var(--color-brand-normal);
   padding: 16px 0;
 }
 
@@ -178,18 +186,17 @@ p {
   line-height: 1.3;
 }
 
+.section-title.centered {
+  text-align: center;
+}
+
 .section-title .accent {
   color: var(--color-brand-dark);
 }
 
 /* Traditions section */
-.traditions-text .brand {
-  color: var(--color-brand-light);
-  font-weight: 600;
-}
-
-.traditions-text.limited {
-  max-width: 340px;
+.traditions-section {
+  padding-top: 96px;
 }
 
 .traditions-container {
@@ -202,12 +209,17 @@ p {
   max-width: 710px;
 }
 
-.traditions-section {
-  padding-top: 96px;
-}
-
 .traditions-title {
   margin-bottom: 42px;
+}
+
+.traditions-text .brand {
+  color: var(--color-brand-normal);
+  font-weight: 600;
+}
+
+.traditions-text.limited {
+  max-width: 340px;
 }
 
 .uppercase {
@@ -215,27 +227,53 @@ p {
 }
 
 /* Chef section */
+.chefs-title {
+  max-width: 540px;
+  margin: 0 auto 80px;
+}
+
+.chefs-title::after,
+.chefs-title::before {
+  display: block;
+  width: 352px;
+  border: 2px solid var(--color-brand-light);
+  content: "";
+}
+
 .chef-title {
   margin-bottom: 16px;
   font-size: 40px;
   font-weight: 600;
 }
 
-.chefs-title {
-  margin-bottom: 80px;
+.chef-photo {
+  border-radius: 4px 4px 4px 200px;
+  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+    -16px 16px 0 2px var(--color-secondary-dark);
 }
 
 /* Formats section */
 .formats-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
+.formats-item {
+  flex-basis: calc((100% - 40px) / 3);
+}
+
 .format-card {
-  padding: 20px;
+  padding: 24px;
+  /* background-image: url("../imgs/warlus-format.jpg"); */ /*Move*/
   border-radius: 16px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(49, 38, 26, 0) 55.21%,
+    rgba(49, 38, 26, 0.71) 72.92%,
+    var(--color-primary-dark) 100%
+  );
   border: 1px solid lightgray; /* remove*/
-  width: 349px;
   height: 444px;
 }
 
@@ -267,9 +305,17 @@ p {
 }
 
 .address-link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 
 .address-copyright {
   font-size: 14px;
+}
+
+.footer {
+  background-image: url("../imgs/footer-background.png");
+  background-color: var(--color-primary-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
