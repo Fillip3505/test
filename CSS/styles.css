@@ -291,6 +291,33 @@ ul {
   font-weight: 300;
 }
 
+/* Carousel  */
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.carousel-arrow {
+  fill: var(--color-primary-dark);
+  padding-top: 2px;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.carousel-button:hover .carousel-arrow {
+  fill: var(--color-primary-light);
+}
+
 /* Contacts section */
 .contacts-title {
   margin-bottom: 16px;
@@ -306,6 +333,14 @@ ul {
 
 .address-link:hover {
   color: var(--color-brand-normal);
+}
+
+.address-icon {
+  fill: var(--color-primary-light);
+}
+
+.address-icon:hover {
+  fill: var(--color-brand-normal);
 }
 
 .address-copyright {
