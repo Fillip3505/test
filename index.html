@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сучасна пекарня</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/main.min.css" />
   </head>
   <body>
     <header class="header">
@@ -18,7 +18,7 @@
               <li>
                 <a class="link" href="#traditions-section">Наші традиції</a>
               </li>
-              <li><a class="link" href="#cookers-section">Шеф-кухарі</a></li>
+              <li><a class="link" href="#chef-section">Шеф-кухарі</a></li>
               <li><a class="link" href="#formats-section">Формати</a></li>
               <li><a class="link" href="#contacts-section">Контакти</a></li>
             </ul>
@@ -139,9 +139,15 @@
             <ul class="formats-list">
               <li class="formats-item">
                 <article class="format-card">
+                  <img
+                    class="format-image"
+                    src="./imgs/warlus-format.jpg"
+                    alt="Warlrus format"
+                  />
                   <h3 class="format-title" lang="en">Warlrus</h3>
                   <div class="format-text">
-                    <p>Площа: до 120 м2 Меню: розширене меню</p>
+                    <p>Площа: до 120 м2</p>
+                    <p>Меню: розширене меню</p>
                     <p>
                       Штат: 2 продавці-касири, 2 пекарі, 2 помічники пекаря, 2
                       офіціанти-різнороби
@@ -152,6 +158,11 @@
               </li>
               <li class="formats-item">
                 <article class="format-card">
+                  <img
+                    class="format-image"
+                    src="./imgs/horseshoe-format.jpg"
+                    alt="Horseshoe format"
+                  />
                   <h3 class="format-title" lang="en">Horseshoe</h3>
                   <div class="format-text">
                     <p>Площа: до 25 м2</p>
@@ -163,6 +174,11 @@
               </li>
               <li class="formats-item">
                 <article class="format-card">
+                  <img
+                    class="format-image"
+                    src="./imgs/handlebar-format.jpg"
+                    alt="Handlebar format"
+                  />
                   <h3 class="format-title" lang="en">Handlebar</h3>
                   <div class="format-text">
                     <p>Площа: до 15 м2</p>
@@ -263,7 +279,7 @@
               </a>
             </div>
             <ul class="footer-menu">
-              <li><a class="link" href="#cookers-section">Шеф-кухарі</a></li>
+              <li><a class="link" href="#chef-section">Шеф-кухарі</a></li>
               <li><a class="link" href="#formats-section">Формати</a></li>
               <li><a class="link" href="#contacts-section">Контакти</a></li>
               <li>
@@ -323,7 +339,7 @@
         <button class="modal-btn-close" type="button">Close</button>
         <h2>Замовити дзвінок</h2>
         <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
-        <form name="modal-form" autocomplete="off" novalidate>
+        <form name="modal-form" autocomplete="off">
           <div class="form-field">
             <label class="form-label visually-hidden" for="user-name">
               Ім'я
@@ -334,6 +350,7 @@
               name="user-name"
               id="user-name"
               placeholder="Ім'я"
+              required
             />
           </div>
 
@@ -347,6 +364,8 @@
               name="user-tel"
               id="user-tel"
               placeholder="Телефон"
+              pattern="^\+[0-9]{12}"
+              required
             />
           </div>
 
@@ -360,6 +379,7 @@
               name="user-email"
               id="user-email"
               placeholder="Електронна пошта"
+              required
             />
           </div>
 
