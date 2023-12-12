@@ -1,76 +1,88 @@
 .footer {
-    padding: 32px 0;
-    position: relative;
-    background-image: url("../imgs/footer-background.png");
-    background-color: var(--color-primary-dark);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+  padding: 32px 0;
+  position: relative;
+  background-image: url("../imgs/footer-background.png");
+  background-color: var(--color-primary-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-.footer::before,
-.footer::after {
+  &::before,
+  &::after {
     position: absolute;
     bottom: 0;
     background-repeat: no-repeat;
     content: "";
-}
+  }
 
-.footer::before {
+  &::before {
     left: 0;
     width: 180px;
     height: 120px;
     background-image: url("../imgs/bread-decor-small.png");
-}
+  }
 
-.footer::after {
-    right: 0;
+  &::after {
     width: 380px;
     height: 190px;
+    right: 0;
     background-image: url("../imgs/bread-decor-big.png");
-}
+  }
 
-.footer-container {
+  &__container {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-}
 
-.footer-nav,
-.footer-address {
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__nav,
+  &__address {
     display: flex;
-    flex-basis: 50%;
+    flex-direction: column;
     gap: 20px;
-}
+    text-align: center;
 
-.footer-logo,
-.footer-menu {
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
+      flex-basis: 50%;
+      text-align: left;
+    }
+  }
+
+  &__logo,
+  &__menu {
     flex-grow: 1;
-}
+  }
 
-.address-list,
-.address-info {
+  &__address-list,
+  &__address-info {
     flex-grow: 1;
-}
+  }
 
-.address-link {
+  &__address-link {
     color: var(--color-primary-light);
     text-decoration: none;
     font-size: 16px;
     font-weight: 300;
-}
+  }
 
-.address-link:hover {
+  &__address-link:hover {
     color: var(--color-brand-normal);
-}
+  }
 
-.address-icon {
+  &__address-icon {
     fill: var(--color-primary-light);
-}
+  }
 
-.address-icon:hover {
+  &__address-icon:hover {
     fill: var(--color-brand-normal);
-}
+  }
 
-.address-copyright {
+  &__address-copyright {
     font-size: 14px;
+  }
 }
