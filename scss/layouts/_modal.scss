@@ -36,10 +36,29 @@
     border-radius: 32px;
   }
 
+  &::after {
+    position: absolute;
+    width: 190px;
+    height: 242px;
+    right: 0;
+    content: "";
+    background-repeat: no-repeat;
+    background-image: url("../imgs/bread-icon.png");
+  }
+
   &__btn-close {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    fill: transparent;
+    stroke: var(--color-primary-dark);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 
     @media screen and (min-width: $bp-tablet) {
       top: 40px;
@@ -61,8 +80,7 @@
 
   &__title {
     font-size: 34px;
-    padding-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-align: center;
 
     @media screen and (min-width: $bp-tablet) {
@@ -74,12 +92,6 @@
 
   &__text {
     text-align: center;
-    color: var(--color-brand-dark);
+    margin-bottom: 72px;
   }
-
-  // @media screen and (min-width: $bp-tablet) {
-  //   &__text {
-  //     cs
-  //   }
-  // }
 }
