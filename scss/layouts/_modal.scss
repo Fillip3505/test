@@ -30,9 +30,9 @@
   overflow-y: auto;
 
   @media screen and (min-width: $bp-tablet) {
-    padding: 128px;
+    padding: 70px 100px;
     max-width: 880px;
-    max-height: 880px;
+    max-height: 800px;
     border-radius: 32px;
   }
 
@@ -41,6 +41,7 @@
     width: 190px;
     height: 242px;
     right: 0;
+    bottom: 0;
     content: "";
     background-repeat: no-repeat;
     background-image: url("../imgs/bread-icon.png");
@@ -75,7 +76,7 @@
   }
 
   &__button {
-    margin: 32px auto 24px;
+    margin: 64px auto 24px;
   }
 
   &__title {
