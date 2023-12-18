@@ -1,8 +1,8 @@
 .footer {
   padding: 32px 0;
   position: relative;
-  background-image: url("../imgs/footer-background.png");
   background-color: var(--color-primary-dark);
+  background-image: url("../imgs/footer-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,31 +11,51 @@
   &::after {
     position: absolute;
     bottom: 0;
-    background-repeat: no-repeat;
     content: "";
   }
 
   &::before {
     left: 0;
-    width: 180px;
-    height: 120px;
-    background-image: url("../imgs/bread-decor-small.png");
+    width: 85px;
+    height: 206px;
+    background-image: url("../imgs/bread-mob-big.png");
+
+    @media screen and (max-width: $bp-tablet) {
+      top: 60px;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      left: 0;
+      width: 180px;
+      height: 120px;
+      background-image: url("../imgs/bread-decor-small.png");
+    }
   }
 
   &::after {
-    width: 380px;
-    height: 190px;
+    width: 100px;
+    height: 90px;
     right: 0;
-    background-image: url("../imgs/bread-decor-big.png");
+    background-image: url("../imgs/bread-mob-small.png");
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 380px;
+      height: 186px;
+      right: 0;
+      background-image: url("../imgs/bread-decor-big.png");
+    }
   }
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 166px;
 
     @media screen and (min-width: $bp-tablet) {
       flex-direction: row;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      gap: 166px;
     }
   }
 
@@ -43,13 +63,16 @@
   &__address {
     display: flex;
     flex-direction: column;
-    gap: 166px;
     text-align: center;
 
     @media screen and (min-width: $bp-tablet) {
       flex-direction: row;
       flex-basis: 50%;
       text-align: left;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      gap: 166px;
     }
   }
 
@@ -58,7 +81,26 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 16px;  
+    gap: 18px;
+
+    @media screen and (min-width: $bp-tablet) {
+      gap: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  &__address-contacts {
+    margin-top: 18px;
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-top: 0;
+    }
   }
 
   &__address-list,
@@ -66,7 +108,28 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+  }
+
+  &__address-list {
+    gap: 18px;
+
+    @media screen and (min-width: $bp-tablet) {
+      gap: 16px;
+    }
+
+    @media screen and (min-width: $bp-tablet) and (max-width: $bp-desktop) {
+      margin-right: 60px;
+    }
+  }
+
+  &__address-info {
+    gap: 8px;
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    &__address-info {
+      gap: 16px;
+    }
   }
 
   &__address-link {
@@ -74,10 +137,6 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: 300;
-  }
-
-  &__link-text--nowrap {
-    white-space: nowrap;
   }
 
   &__address-link:hover {
@@ -93,13 +152,20 @@
   }
 
   &__address-copyright {
-    font-size: 14px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 400;
     color: var(--color-secondary-dark);
   }
 
   &__icon-container {
     display: flex;
-    margin-top: 16px;
+    justify-content: center;
+    margin: 16px 0 8px;
     gap: 22px;
+
+    @media screen and (min-width: $bp-tablet) {
+      justify-content: start;
+    }
   }
 }
